@@ -1,0 +1,116 @@
+package tweet;
+import java.awt.Color;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
+ 
+
+
+
+import java.io.PrintWriter;
+
+import javax.servlet.ServletConfig;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.jfree.chart.ChartFactory;
+import org.jfree.chart.ChartUtilities;
+import org.jfree.chart.JFreeChart;
+import org.jfree.chart.plot.PiePlot3D;
+import org.jfree.chart.plot.PlotOrientation;
+import org.jfree.data.category.CategoryDataset;
+import org.jfree.data.category.DefaultCategoryDataset;
+import org.jfree.data.general.DefaultPieDataset;
+import org.jfree.data.general.PieDataset;
+
+
+public class My3DPieChartWithDataFromFile {
+	
+
+	
+	private CategoryDataset createBdiagram(String dataFileName) throws IOException
+	
+	{
+	      
+	       DefaultCategoryDataset dataSet = new DefaultCategoryDataset();
+		
+	 
+	        BufferedReader bReader =new BufferedReader(new FileReader(dataFileName));
+	            String s;
+	            while ((s=bReader.readLine())!=null){
+	              String datavalue [] = s.split(",");
+	              String category = datavalue[0];
+	              String value = datavalue [1];
+	              
+	              
+	              dataSet.setValue(Double.parseDouble(value),"Counting the maximum statuses",category );
+	            
+	            }
+	            bReader.close();
+	 
+	       
+	            return dataSet;
+	    }
+	 
+	  
+	 
+	 JFreeChart createBardiagram(CategoryDataset dataset) {
+		 
+	         
+	         
+	      
+		   JFreeChart chart = ChartFactory.createBarChart(
+					"Finding the most popular hashtags us", "Hashtags", "Count",
+					  (CategoryDataset) dataset, PlotOrientation.VERTICAL, false, true, false);
+		
+	  
+	      
+	 
+	        return chart;
+	 
+	    }
+	 
+	    public void saveChart(JFreeChart chart, String fileLocation) {
+	        String fileName = fileLocation;
+	        try {
+	            /**
+	             * This utility saves the JFreeChart as a JPEG First Parameter:
+	             * FileName Second Parameter: Chart To Save Third Parameter: Height
+	             * Of Picture Fourth Parameter: Width Of Picture
+	             */
+	            ChartUtilities.saveChartAsJPEG(new File(fileName), chart, 800, 600);
+	   
+	        } catch (IOException e) {
+	            e.printStackTrace();
+	            System.err.println("Problem occurred creating chart.");
+	        }
+	    }
+	 
+	    public static void main(String[] args) throws Exception {
+	   
+	        My3DPieChartWithDataFromFile chartCreator = new My3DPieChartWithDataFromFile();
+	 
+	        String dataFileLocation="out1.txt";
+	 
+	        /** Create a BARDIAGRAM* */
+	       
+	        CategoryDataset pieDataset = chartCreator.createBdiagram(dataFileLocation);
+	        System.out.println(pieDataset);
+	        /** Create 3D Pie Chart based on this dataset* */
+	        JFreeChart chart = chartCreator.createBardiagram(pieDataset);
+	        System.out.println(chart);
+	 
+	        /** Define a file location to save this chart */
+	        String fileLocation = "D:/Lab Assignments/tweet/piechartrdd.jpg";
+	        /** Save the chart to the file system* */
+	        chartCreator.saveChart(chart, fileLocation);
+	       System.out.println("3D Pie Chart has been created successfully");
+	       System.out.println("Chart has been saved to: " + fileLocation);
+	    }
+	    
+
+}

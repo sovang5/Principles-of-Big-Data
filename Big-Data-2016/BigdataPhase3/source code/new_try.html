@@ -1,0 +1,306 @@
+<!DOCTYPE HTML>
+<!--
+	Principles of Big Data Project Phase 3
+		By Hoang Nguyen, Sarah Choi, Rajarshi Tarafdar, Sovan Ghosh, Adhirath Kapoor
+
+
+	It's running by localhost so some images or videos can be not runned in other machines.
+	we used template "full motion" from 'www.templated.co/fullmotion'
+-->
+<html>
+	<head>
+		<title>Full Motion</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+
+		<script language="JavaScript">
+        function changeImage1(){
+            var img = document.getElementById("image");
+            img.src="D:/Lab Assignments/tweet/piechart2.jpg";
+            return false;
+        }
+        function changeImage2(){
+            var img = document.getElementById("image");
+            img.src="D:/Lab Assignments/tweet/piechart1.jpg";
+            return false;
+        }
+        function changeImage3(){
+            var img = document.getElementById("image2");
+            img.src="D:/Lab Assignments/tweet/";
+            return false;
+        }
+        function changeImage4(){
+            var img = document.getElementById("image2");
+            img.src="D:/Lab Assignments/tweet/";
+            return false;
+        }
+        function changeImage5(){
+            var img = document.getElementById("image2");
+            img.src="D:/Lab Assignments/tweet/";
+            return false;
+        }
+
+    	</script>
+
+		<style type="text/css">
+        h2 { color: #111;
+            font-family: 'Open Sans Condensed', sans-serif; font-size: 64px; font-weight: 700; line-height: 64px; margin: 0 0 0; padding: 20px 30px; text-align: center; text-transform: uppercase; }
+
+        p { color: #111; font-family: 'Open Sans', sans-serif; font-size: 16px; line-height: 28px; margin: 0 0 48px; }
+
+        .line-header {
+        	border-top: 1px solid #111;
+         	display: block;
+         	margin-top: 40px;
+           	padding-top: 20px;
+           	margin-left:30px;
+           	margin-right:30px;
+            position: relative; }
+
+        .line-body{
+        	border-top: 1px solid #111;
+         	display: block;
+          	margin:0px;
+           	padding:0px;
+            width:100%;
+            position:relative;
+        }
+        .line-bottom{
+        	border-top: 1px solid #111;
+         	display: block;
+          	margin:0px;
+           	padding:0px;
+           	margin-bottom:30px;
+            width:1069px;
+            position:relative;
+        }
+
+        .btn{
+            -moz-border-radius: 50%;
+            border-radius:50%;
+            margin-left:250px;
+            border: 10px solid #111;
+            color: #fff;
+            display: block;
+            font-family: 'Open Sans', sans-serif;text-align: center; text-transform: uppercase; width: 80px;background: #111;
+        }
+        .date {
+        	color: #111;
+        	display: block;
+        	font-family: 'Open Sans', sans-serif;
+        	font-size: 16px;
+        	position: relative;
+        	text-align: center;
+        	z-index: 1; }
+
+        .date:before {
+        	border-top: 1px solid #111;
+        	content: "";
+        	position: absolute;
+        	top: 12px;
+        	left: 0;
+        	width: 100%;
+        	z-index: -1; }
+
+        #left {
+            padding-left:40px; }
+
+        .date span{ background: #eee; padding: 0 10px; text-transform: uppercase; }
+
+        .icon{
+            position:relative;
+        }
+
+        .button-row {
+	  		display: -webkit-inline-box;
+	  		display: -moz-inline-box;
+	  		display: inline-box;
+	  		display: -webkit-inline-flex;
+	  		display: -moz-inline-flex;
+	  		display: -ms-inline-flexbox;
+	  		display: inline-flex;
+	}
+		.button-row > div {
+		  	position: relative;
+		  	width: 160px;
+		  	height: 50px;
+		  	margin: 0 15px;
+		  	padding:0;
+		  	-webkit-perspective: 1000px;
+		  	-moz-perspective: 1000px;
+		  	perspective: 1000px;
+		}
+		.button-row > div > a {
+		  	margin: 0;
+		  	padding: 0;
+		  	width: 100%;
+		  	height: 100%;
+		  	position: absolute;
+		  	-webkit-transform-style: preserve-3d;
+		  	-moz-transform-style: preserve-3d;
+		  	-ms-transform-style: preserve-3d;
+		  	-o-transform-style: preserve-3d;
+		  	transform-style: preserve-3d;
+		  	-webkit-transform: translateZ(-25px);
+		  	-moz-transform: translateZ(-25px);
+		  	-ms-transform: translateZ(-25px);
+		  	-o-transform: translateZ(-25px);
+		  	transform: translateZ(-25px);
+		  	-webkit-transition: -webkit-transform 0.25s;
+		  	-moz-transition: -moz-transform 0.25s;
+		  	transition: transform 0.25s;
+		}
+		.button-row > div > a::before, .button-row > div > a::after {
+		  	justify-content: center;
+		  	align-items: center;
+		  	margin: 0;
+		  	margin-left:10px;
+		  	padding:0;
+		  	width: 160px;
+		  	height: 50px;
+		  	position: absolute;
+		  	border: 5px solid black;
+		  	box-sizing: border-box;
+		  	content: attr(title);
+		  	display: -webkit-box;
+		  	display: -moz-box;
+		  	display: box;
+		  	display: -webkit-flex;
+		  	display: -moz-flex;
+		  	display: -ms-flexbox;
+		  	display: flex;
+		}
+		.button-row > div > a::before {
+		  	background-color: #000;
+		  	color: #fff;
+		  	-webkit-transform: rotateY(0deg) translateZ(25px);
+		  	-moz-transform: rotateY(0deg) translateZ(25px);
+		  	-ms-transform: rotateY(0deg) translateZ(25px);
+		  	-o-transform: rotateY(0deg) translateZ(25px);
+		  	transform: rotateY(0deg) translateZ(25px);
+		}
+		.button-row > div > a::after {
+		  	background-color: #fff;
+		  	border-color: #000;
+		  	color: #000;
+		  	-webkit-transform: rotateX(90deg) translateZ(25px);
+		  	-moz-transform: rotateX(90deg) translateZ(25px);
+		  	-ms-transform: rotateX(90deg) translateZ(25px);
+		  	-o-transform: rotateX(90deg) translateZ(25px);
+		  	transform: rotateX(90deg) translateZ(25px);
+		}
+		.button-row > div > a:hover {
+		  	-webkit-transform: translateZ(-25px) rotateX(-90deg);
+		  	-moz-transform: translateZ(-25px) rotateX(-90deg);
+		  	-ms-transform: translateZ(-25px) rotateX(-90deg);
+		  	-o-transform: translateZ(-25px) rotateX(-90deg);
+		  	transform: translateZ(-25px) rotateX(-90deg);
+		}
+
+		.hide{
+			display:none;
+			}
+
+		.jumbotron{
+			margin:0;
+		}
+
+		#right{
+			width:40%;
+			float: right;
+			margin-right:50px;
+			margin-top:10px;
+
+		}
+		#image,image2{
+			position:relative;
+			left:10px;
+			top:10px;
+			margin-bottom:60px;
+		}
+    </style>
+
+	</head>
+	<body id="top">
+
+			<!-- Banner -->
+			<!--
+				To use a video as your background, set data-video to the name of your video without
+				its extension (eg. images/banner). Your video must be available in both .mp4 and .webm
+				formats to work correctly.
+			-->
+			<section id="banner" data-video="images/videoplayback">
+				<div class="inner">
+					<header>
+						<h1 style="font-size:80px;">Big Data Project</h1>
+						<p style="font-size:38px;">Analysis of tweet about music</p>
+						<p style="font-size:20px;">Presented By<br>Rajarshi Tarafdar Sovan Ghosh<br>Sarah choi Adhirath Kapoor Mark Nguyen</p>
+							
+					</header>
+					<a href="#main" class="more">Learn More</a>
+				</div>
+			</section>
+
+			<!-- Main -->
+			<div id="main">
+				<div class="inner">
+
+					<div id="container" style="width:80%; margin: 5px 5px 5px 5px; padding-left:20px">
+						<div id="left" style="float:center; width:100%;">
+							<!-- for chart image-->
+							<div class="imgdiv" id="right">
+								<img id="image" height="400" width="600" alt="Noooo">
+							</div>
+
+							<!--for each query and button-->
+							<div style="width:50%;">
+								<p style="font-weight:bold; margin:10px;">Please choose one of query which you want</p>
+								<hr class="line-body">
+
+								<p style="margin:10px; padding:0;">select user.name, count(user.statuses_count) from tweet where user.name is not NULL and text like '%music%' GROUP BY user.name  order by count(user.statuses_count) desc
+								<div class="button-row"><div><a class="hide" title="query1" ></a></div><div><a title="querry1" onclick="changeImage1();"></a></div></div>
+								<!--<button class="btn btn-default" onclick="changeImage1();">querry 1</button>-->
+								</p>
+								<p style="margin:10px; padding:0;">SELECT LOWER(hashtags.text), COUNT(*) AS total_count FROM tweet  LATERAL VIEW EXPLODE(entities.hashtags) t1 AS hashtags where text LIKE '%POP%' or text LIKE '%pop%' GROUP BY LOWER(hashtags.text) ORDER BY total_count DESC
+								<div class="button-row"><div><a class="hide" title="query2" ></a></div><div><a title="querry2" onclick="changeImage2();"></a></div></div>
+								</p>
+								<p style="margin:10px; padding:0;">select user.name, max(user.followers_count) from tweet where user.id IS NOT NULL group by user.name order by max(user.followers_count) desc
+								<div class="button-row"><div><a class="hide" title="query3" ></a></div><div><a title="querry3" onclick="changeImage3();"></a></div></div>
+								</p>
+
+							</div>
+							<hr class="line-bottom">
+
+							<div class="imgdiv" id="right">
+								<img id="image2" height="400" width="600" alt="Noooo">
+							</div>
+
+							<div style="width:50%;">
+								<p style="margin:10px; padding:0;">SELECT user.location, COUNT(user.location) from tweet where array_contains (entities.hashtags.text,'AMAs')=true GROUP BY user.location ORDER BY COUNT(user.location) DESC
+								<div class="button-row"><div><a class="hide" title="query4" ></a></div><div><a title="querry4" onclick="changeImage4();"></a></div></div>
+								</p>
+
+								<p style="margin:10px; padding:0;">select entities.media.media_url, count (entities.media.media_url) where text like %DNCE% GROUP BY entities.media.media_url ORDER BY COUNT(entities.media.media_url) DESC
+								<div class="button-row"><div><a class="hide" title="query5" ></a></div><div><a title="querry4" onclick="changeImage5();"></a></div></div>
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.poptrox.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
